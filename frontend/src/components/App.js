@@ -1,17 +1,50 @@
 var React = require('react');
+var fetch = require('node-fetch');
+
 var Sidebar = require('./Sidebar');
 var Body = require('./Body');
 
-var poem = {"_id":"birds-passing-night","body":"\nBirds Passing the Night\n\n\n\nIn the flight of the ruru\nvoices recalling the past\nshaping the future perhaps\nAncestors\nseating themselves at the window\nglad to be part of the talk\nthe reverence for night\nwhen wind blows us\nstories and rain is a song\ncaught in the remembering throat.\n\n","audio":"http://www.poetryarchive.org/files/poem_audio/Birds%20Passing%20The%20Night.mp3","title":"Birds Passing the Night","themes":[],"poet":"Riemke Ensing"};
+var routes = {
+	playlist: 'http://localhost:3000/poems'
+};
 
 var App = React.createClass({
+	getInitialState: function(){
+		return {
+			current: 0,
+			playlist: null
+		};
+	},
+	componentDidMount: function(){
+		fetch(routes.playlist)
+	    .then(function(res) {
+	        return res.json();
+	    }).then(this.setPlaylist);
+	},
+	setPlaylist: function(data){
+		this.setState({ playlist: data });
+	},
+	getCurrent: function(){
+		return this.state.playlist[this.state.current];
+	},
+	next: function(){
+		this.setState({ current: this.state.current + 1 });
+	},
+	prev: function(){
+		this.setState({ current: this.state.current - 1 });
+	},
 	render: function(){
-		return (
-			<main>
-				<Sidebar poem={poem} />
-				<Body text={poem.body} />
-			</main>
-			);
+		if(this.state.playlist){
+			var poem = this.getCurrent();
+			return (
+				<main>
+					<Sidebar poem={poem} next={this.next} prev={this.prev} />
+					<Body text={poem.body} />
+				</main>
+				);
+		} else {
+			return (<main></main>);
+		}
 	}
 });
 

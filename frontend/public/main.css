@@ -20,4 +20,9 @@ main {
 
 .body {
 	flex: 2;
+	overflow-y: scroll;
+}
+
+.body p {
+	white-space: pre;
 }

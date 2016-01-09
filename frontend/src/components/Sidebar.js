@@ -6,7 +6,7 @@ var Sidebar = React.createClass({
 		return (
 			<div className="sidebar">
 				{this.props.poem.title}
-				<AudioPlayer next={this.props.next} poem={this.props.poem} />
+				<AudioPlayer next={this.props.next} prev={this.props.prev} poem={this.props.poem} />
 			</div>
 			);
 	}
