@@ -6,7 +6,7 @@ var constants = require('../helpers/constants');
 var db = require('./db');
 var jwt = require('jsonwebtoken');
 var errorHelper = require('../helpers/errors');
-var promise  = require('Bluebird');
+var promise  = require('bluebird');
 var ObjectId = require('mongodb').ObjectID;
 
 // Auth layer
