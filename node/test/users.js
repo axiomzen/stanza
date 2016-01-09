@@ -114,11 +114,11 @@ describe('Users', function() {
     });
 
     describe('User has signed up', function() {
-      var userSignUp = {}
-      , userIdStr = ''
-      , userAuthTokenStr = ''
-      , userPassword = ''
-      , userEmail = '';
+      var userSignUp = {},
+        userIdStr = '',
+        userAuthTokenStr = '',
+        userPassword = '',
+        userEmail = '';
 
       beforeEach(function(done){
         request(app)
@@ -133,7 +133,7 @@ describe('Users', function() {
             body.should.not.have.property('password');
             userSignUp = body;
             done();
-          })
+          });
       });
 
       it('should not be able to sign up with the same email as an existing user', function(done){
@@ -273,7 +273,7 @@ describe('Users', function() {
           lastName: "anUpdatedLastName",
           email: "anUpdatedEmail@gmail.com",
           password: "anUpdatedPassword"
-        }
+        };
         afterEach(function(done){
           request(app)
             .delete('/v1/test/users/'+newUserInfo.email)
@@ -284,7 +284,7 @@ describe('Users', function() {
           var userInfo = {
             firstName: 'aFirstName',
             lastName: 'aLastName'
-          }
+          };
           request(app)
             .put('/v1/users')
             .auth(apiToken, 'dummy')
@@ -304,7 +304,7 @@ describe('Users', function() {
             email: 'aNewEmail@gmail.com',
             firstName: 'aFirstName',
             lastName: 'aLastName'
-          }
+          };
           request(app)
             .put('/v1/users')
             .auth(apiToken, 'dummy')
@@ -344,7 +344,7 @@ describe('Users', function() {
         it('should not be able to update their password to be too short', function(done) {
           var userInfo = {
             password: ''
-          }
+          };
           request(app)
             .put('/v1/users/password')
             .auth(apiToken, 'dummy')
