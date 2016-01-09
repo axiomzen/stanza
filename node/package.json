@@ -1,0 +1,39 @@
+{
+  "name": "node",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test",
+    "start": "nodemon app.js"
+  },
+  "author": "$GO_HATCH_REPO_USER",
+  "homepage": "https://github.com/axiomzen/node",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^2.9.34",
+    "body-parser": "^1.5.2",
+    "cron": "^1.0.9",
+    "crypto": "^0.0.3",
+    "express": "^4.7.2",
+    "express-session": "^1.11.3",
+    "basic-auth": "^1.0.3",
+    "jsonwebtoken": "^5.0.4",
+    "mandrill-api": "^1.0.45",
+    "nodemon": "^1.4.0",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.11.14",
+    "mongodb": "^2.0.43",
+    "request": "^2.60.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.3",
+    "should": "^4.0.4",
+    "supertest": "^0.13.0",
+    "supertest-as-promised": "^2.0.2"
+  }
+}
