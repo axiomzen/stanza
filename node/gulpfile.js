@@ -17,6 +17,7 @@
       'src/{,*/}*.js',
       'js/{,*/}*.js',
       '!js/libs/{,*/}*.js',
+      '!public/{,*/}*.js',
       '!FeedMe/{,*/}*.js'
     ])
       .pipe(plugin.plumber(function(err) {

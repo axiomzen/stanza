@@ -26,7 +26,7 @@
   app.set('port', process.env.PORT || 3000);
   app.use(env === 'development' ? logger('dev') : logger('default'));
   app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded());
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser());
 
   require('./src/routes')(app);
