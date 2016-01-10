@@ -6,7 +6,7 @@ var Body = require('./Body');
 var Menu = require('./Menu');
 
 var routes = {
-	playlist: 'http://localhost:3000/poems/'
+	playlist: 'http://codex-stanza.herokuapp.com/poems/'
 };
 
 var menu = document.getElementById('menu');
@@ -62,8 +62,8 @@ var App = React.createClass({
 		return (
 			<div className="inner">
 				<Sidebar showMenu={this.showMenu} emotion={this.state.emotion} current={this.state.current} playlist={this.state.playlist} poem={poem} next={this.next} prev={this.prev} />
-				<Body text={poem.body} />	
-			</div>	
+				<Body text={poem.body} />
+			</div>
 			);
 	},
 	render: function(){
