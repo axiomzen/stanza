@@ -3,7 +3,6 @@
 
   var Poem = require('../controllers/poem.js');
 
-
   var Router = function(app) {
 
     app.get('/ping', function (req, res, next){
@@ -13,6 +12,7 @@
     });
 
     app.get('/poems/:emotion', Poem.get);
+    app.get('/emotions', Poem.getEmotionList);
 
   };
 
