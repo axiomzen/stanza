@@ -18,23 +18,17 @@
           res.send(poems);
         });
     },
-
-    getEmotionList: function(req, res) {
+    playlist: function(req, res){
+      var emotion = req.params.emotion;
+      return Emotion.getList().then(function(emotionObj){
+        return res.render('playlist', { title: 'Stanza', emotion: emotion, emotions: emotionObj[0].emotions});
+      });
+    },
+    home: function(req, res) {
       console.log('getEmotionList called');
-      return Emotion.getList()
-        .then(function(emotionObj){
-          if (_.isEmpty(emotionObj)) {
-            console.log('getEmotionList emotionObj EMPTY');
-            return Emotion.create()
-            .then(function(stuff){
-              console.log('Emotion.create stuff', stuff);
-              return res.send([]);
-            });
-          }
-          return res.send({
-            emotions: JSON.parse(JSON.stringify(emotionObj[0].emotions))
-          });
-        });
+      return Emotion.getList().then(function(emotionObj){
+        return res.render('index', { title: 'Stanza', emotions: emotionObj[0].emotions});
+      });
     },
   };
 

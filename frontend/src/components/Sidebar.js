@@ -12,15 +12,18 @@ var Sidebar = React.createClass({
 	},
 	renderPlaylist: function(){
 		var poems = this.props.playlist.map(function(poem, i){
-			return (<li className={this.props.current == i ? 'active' : ''} key={poem._id}><strong>{poem.title}</strong> {poem.poet}</li>);
+			return (<li className={this.props.current == i ? 'active' : ''} key={i}><strong>{poem.title}</strong> {poem.poet}</li>);
 		}.bind(this));
 		return (<div className={"playlist" + (this.state.showPlaylist ? ' active' : '')}><ul>{poems}</ul></div>);
+	},
+	showMenu: function(){
+		this.props.showMenu();
 	},
 	render: function(){
 		return (
 			<div className="sidebar">
 				<div className="chosen-genre">
-                    <span>ANTICIPATION</span>
+                    <span onClick={this.showMenu}>{this.props.emotion}</span>
                 </div>
 				{this.renderPlaylist()}
 				<div className="inner">

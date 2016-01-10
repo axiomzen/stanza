@@ -11,12 +11,9 @@
       });
     });
 
+    app.get('/playlist/:emotion', Poem.playlist);
     app.get('/poems/:emotion', Poem.get);
-    app.get('/emotions', Poem.getEmotionList);
-
-    app.get('/', function (req, res) {
-      res.render('index', { title: 'Stanza' });
-    });
+    app.get('/', Poem.home);
 
   };
 

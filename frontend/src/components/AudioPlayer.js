@@ -12,6 +12,7 @@ var AudioPlayer = React.createClass({
 	},
 	componentDidUpdate: function(prevProps, prevState){
 		if(prevProps.poem._id !== this.props.poem._id){
+			console.log('updated');
 			this.refs.player.load();
 			this.refs.player.play();
 			this.setState({ playing: true, progress: 0 });			
