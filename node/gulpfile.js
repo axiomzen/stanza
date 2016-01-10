@@ -42,9 +42,9 @@
       watch: ['app.js', '.'],
       nodeArgs: ['--debug'],
       env: { 'NODE_ENV': env }
-    }).on('restart', function() {
-      gulp.start('jshint');
-    });
+    })//.on('restart', function() {
+    //  gulp.start('jshint');
+    //});
   });
 
   gulp.task('repo:setup', ['npm:install']);
@@ -54,7 +54,7 @@
     'npm install'
   ]));
 
-  gulp.task('js', ['jshint'], function() {
+  gulp.task('js', function() {
     gulp.src(['./js/{,*/}*.js'])
       .pipe(gulp.dest('./public/js'));
   });

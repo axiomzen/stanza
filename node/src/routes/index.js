@@ -14,10 +14,7 @@
     app.get('/poems/:emotion', Poem.getByEmotion);
     app.get('/poems', Poem.getByQuery);
     app.get('/emotions', Poem.getEmotionList);
-
-    app.get('/', function (req, res) {
-      res.render('index', { title: 'Stanza' });
-    });
+    app.get('/', Poem.home);
 
   };
 

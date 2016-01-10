@@ -32,25 +32,44 @@ html, body {
 }
 
 main {
-	display: flex;
-	flex-direction: row;
 
 	width: 100%;
 	height: 100%;
 
 	background-color:#202020;
 
-	-webkit-transition: background 0.2s ease-out;
-	   -moz-transition: background 0.2s ease-out;
-	    -ms-transition: background 0.2s ease-out;
-	     -o-transition: background 0.2s ease-out;
-	        transition: background 0.2s ease-out;
+	-webkit-transition: background 1s ease-out;
+	   -moz-transition: background 1s ease-out;
+	    -ms-transition: background 1s ease-out;
+	     -o-transition: background 1s ease-out;
+	        transition: background 1s ease-out;
 }
 
 main.active {
 	background: #5f2c82; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #516395, #614385); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+main > .inner {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+	height: 100%;
+
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .sidebar {
@@ -338,7 +357,7 @@ body {
 	background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
 
-.menu {
+#menu {
 	padding:2em 4em;
 	height: 100%;
 	background: #202020;
@@ -347,9 +366,6 @@ body {
 	z-index: 100;
 }
 
-.menu-off{
-	display:none;
-}
 input[type="text"] {
 	width: 100%;
 	display: block;
@@ -459,6 +475,11 @@ input[type="text"]:focus {
     letter-spacing: 0.3px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+}
+
+.genre-list-item a {
+	text-decoration: none;
+	color: #fff;
 }
 
 .genre-list-item.clicked{

@@ -23,7 +23,7 @@
   poemSchema.index({ 'title' : 1});
 
   poemSchema.statics.getByEmotion = function(emotionName) {
-    return Poem.findAsync({ 'emotion.name' : emotionName })
+    return Poem.findAsync() //{ 'emotion.name' : emotionName }
       .then(function(poems) {
         return _.sortBy(poems, function(poem) {
           var selected = _.find(poem.emotion, function(emo) {

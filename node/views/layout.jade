@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		title!= title
+		link(rel="stylesheet" type="text/css" href="/static/main.css")
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display' rel='stylesheet' type='text/css')
+	body
+		header
+			.search-container
+				.search-bar
+					input.search(type="text" placeholder="Search")
+					.search-button
+			.logo Stanza
+		block content

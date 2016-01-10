@@ -8,7 +8,7 @@ var uglify = require('gulp-uglify');
 var derequire = require('gulp-derequire');
 
 var path = {
-  DEST: '../../public',
+  DEST: '../node/public/',
   SRC: './src/',
 };
 
