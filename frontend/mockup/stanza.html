@@ -27,6 +27,9 @@
 
              $(".playlist-button").on("click",function(){
                 $(this).toggleClass("activated")
+                $(".playlist-container").toggleClass("activated").delay(300).queue(function () { 
+                    $(this).css('opacity', '1'); 
+                    });
             })
 
         });
@@ -42,7 +45,9 @@
                 </div>
             </div>
         </div>
-        <div class="right logo">STANZA</div>
+        <div class="right logo">
+            STANZA
+        </div>
     </div>
     <div class="main-container">
         <div class="menu">
@@ -139,6 +144,44 @@
                     <div class="playlist">
                         <div class="playlist-button button">
                         </div>
+                    </div>
+                </div>
+
+                <div class="playlist-container">
+                    <div class="playlist-listing">
+                        <li class="highlighted">
+                            <b>The Tide Rises, the Tide Falls</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Hello, its me</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Dinner please</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Hello, its me</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Dinner please</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Hello, its me</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Dinner please</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Hello, its me</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Dinner please</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Hello, its me</b> by Henry Wadsworth Longfellow
+                        </li>
+                        <li>
+                            <b>Dinner please</b> by Henry Wadsworth Longfellow
+                        </li>
                     </div>
                 </div>
 

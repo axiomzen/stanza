@@ -18,6 +18,9 @@ var AudioPlayer = React.createClass({
 		}
 	},
 	tick: function() {
+		if (this.refs.player.ended){
+			this.next();
+		}
     	this.setState({ progress: this.refs.player.currentTime / this.refs.player.duration });
   	},
 	toggle: function(){
@@ -35,6 +38,9 @@ var AudioPlayer = React.createClass({
 	prev: function(){
 		return this.props.prev();
 	},
+	togglePlaylist: function(){
+		return this.props.togglePlaylist();
+	},
 	render: function(){
 		return (
 			<div className='audio-player'>
@@ -42,9 +48,10 @@ var AudioPlayer = React.createClass({
 					  <source src={this.props.poem.audio} type="audio/mpeg" />
 				</audio>
 				<div className="controls">
-					<div className="skip-back button" onClick={this.prev}></div>
+					<div className={"skip-back button" + (this.props.current == 0 ? ' inactive' : '')} onClick={this.prev}></div>
 					<div className={'play-pause button' + (!this.state.playing ? ' play' : '')}  onClick={this.toggle}></div>
-					<div className="skip-forward button" onClick={this.next}></div>
+					<div className={"skip-forward button" + (this.props.current == this.props.playlist.length - 1 ? ' inactive' : '')} onClick={this.next}></div>
+					<div className={"playlist-button button " + (this.props.showPlaylist ? ' active' : '')} onClick={this.togglePlaylist}></div>
 				</div>
 				<div className="progress-bar">
                     <div className="marker" style={{ width: this.state.progress * 100 + '%'}}></div>
