@@ -19,26 +19,38 @@
   });
 
   poemSchema.index({ 'emotion.name' : 1});
+  poemSchema.index({ 'poet' : 1});
+  poemSchema.index({ 'title' : 1});
 
   poemSchema.statics.getByEmotion = function(emotionName) {
     return Poem.findAsync({ 'emotion.name' : emotionName })
       .then(function(poems) {
-        // console.log('POEM ID: ', poems[0]._id);
-        // console.log(poems[0]);
         return _.sortBy(poems, function(poem) {
           var selected = _.find(poem.emotion, function(emo) {
             return emotionName === emo.name;
           });
-          // console.log('selected emotion value', selected.value);
           return selected ? -selected.value : 0;
         });
       })
       .then(function(sortedPoems) {
-        // console.log('Top Poem:', sortedPoems[0]);
         return sortedPoems.splice(0, 50);
-        // return sortedPoems;
       });
-    // return Poem.findAsync({ poet: emotion });
+  };
+
+  poemSchema.statics.getByTitleOrPoet = function(queryStr) {
+    var expr = new RegExp('^.*' + queryStr + '.*$', "i");
+    var queryByTitle = Poem.find({ title : expr });
+    var queryByPoet = Poem.find({ poet : expr });
+
+    return Promise.all([ queryByTitle, queryByPoet ])
+      .spread(function(poemsByTitle, poemsByPoet){
+        // console.log('Found poems by Title: ', poemsByTitle);
+        // console.log('Found poems by Poet: ', poemsByPoet);
+
+        var allPoems = _.union(poemsByPoet, poemsByTitle);
+        // console.log('ALL POEMS: ', allPoems);
+        return allPoems;
+      });
   };
 
   var Model = db.model('Poem', poemSchema);

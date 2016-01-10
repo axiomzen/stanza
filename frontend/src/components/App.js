@@ -68,7 +68,7 @@ var App = React.createClass({
 	},
 	render: function(){
 		return (
-			<main className={this.state.emotion ? 'active' : ''}>
+			<main className={this.state.emotion ? this.state.emotion.replace('+', '-') : ''}>
 				<Menu visible={this.state.showMenu} chooseEmotion={this.chooseEmotion} emotions={this.props.emotions} />
 				{this.state.playlist ? this.renderPlaylist() : null}
 			</main>

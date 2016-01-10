@@ -45,11 +45,60 @@ main {
 	        transition: background 1s ease-out;
 }
 
-main.active {
+main.love{
+	background: #fd746c; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #fd746c , #ff9068); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #fd746c , #ff9068); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.passion-desire{
 	background: #5f2c82; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #516395, #614385); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
+
+main.sadness{
+background: #E6DADA; /* fallback for old browsers */ background: -webkit-linear-gradient(123deg, #E6DADA , #274046); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(123deg, #E6DADA , #274046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.optimism{
+background: #556270; /* fallback for old browsers */ background: -webkit-linear-gradient(327deg, #556270 , #FF6B6B); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(327deg, #556270 , #FF6B6B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.anger{
+background: #fe8c00; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.fear{
+background: #16222A; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.loss{
+background: #4b6cb7; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #4b6cb7 , #182848); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #4b6cb7 , #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.nature{
+background: #134E5E; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #134E5E , #71B280); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #134E5E , #71B280); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.family{
+background: #348F50; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.politics{
+background: #1F1C2C; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #1F1C2C , #928DAB); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #1F1C2C , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.mythology{
+background: #1D2B64; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #1D2B64 , #F8CDDA); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #1D2B64 , #F8CDDA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.exploration{
+background: #085078; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #085078 , #85D8CE); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #085078 , #85D8CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+main.humor{
+background: #EB3349; /* fallback for old browsers */ background: -webkit-linear-gradient(33deg, #EB3349 , #F45C43); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(33deg, #EB3349 , #F45C43); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
 
 main > .inner {
 	display: flex;
