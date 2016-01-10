@@ -215,7 +215,7 @@ main > .inner {
 }
 
 .body p {
-	white-space: pre;
+	white-space: pre-line;
 }
 
 header {
@@ -344,7 +344,7 @@ h3 {
 
 p {
 	font-family: "Playfair Display",serif;
-	font-size:1em;
+	font-size:1.2em;
 	font-weight: 400;
 	line-height:2;
 	letter-spacing: 0.2px;
@@ -680,8 +680,10 @@ input[type="text"]:focus {
 	bottom:12em;
 	padding:0 4em;
 }
+
 .poem-author{
 	margin-top:1em;
+	cursor: pointer;
 }
 .poem-author span.author-name{
 	border-bottom:solid 1px #fff;

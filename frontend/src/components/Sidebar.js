@@ -29,7 +29,7 @@ var Sidebar = React.createClass({
 				<div className="inner">
 					<div className={"meta" + (this.state.showPlaylist ? ' hide' : '')}>
 						<h2 className="poem-title">{this.props.poem.title}</h2>
-						<h4 className="poem-credit">{'By ' + this.props.poem.poet}</h4>
+						<div className="poem-author"><span className='author-name'>{'By ' + this.props.poem.poet}</span></div>
 					</div>
 					<AudioPlayer showPlaylist={this.state.showPlaylist} togglePlaylist={this.togglePlaylist} next={this.props.next} prev={this.props.prev} playlist={this.props.playlist} current={this.props.current} poem={this.props.poem} />
 				</div>
