@@ -28,9 +28,15 @@ var App = React.createClass({
 		return this.state.playlist[this.state.current];
 	},
 	next: function(){
+		if (this.state.current == this.state.playlist.length - 1) {
+			return;
+		}
 		this.setState({ current: this.state.current + 1 });
 	},
 	prev: function(){
+		if (this.state.current == 0) {
+			return;
+		}
 		this.setState({ current: this.state.current - 1 });
 	},
 	render: function(){
@@ -38,7 +44,7 @@ var App = React.createClass({
 			var poem = this.getCurrent();
 			return (
 				<main className="active">
-					<Sidebar poem={poem} next={this.next} prev={this.prev} />
+					<Sidebar current={this.state.current} playlist={this.state.playlist} poem={poem} next={this.next} prev={this.prev} />
 					<Body text={poem.body} />
 				</main>
 				);
