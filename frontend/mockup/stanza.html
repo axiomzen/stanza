@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stanza</title>
+        <link rel="author" href="humans.txt">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display' rel='stylesheet' type='text/css'>
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="style.css">
+    <script>
+         $(document).ready(function() {
+            $(".genre-list-item").on("click",function(){
+                var genreName = $(this).text()
+                $(".menu").addClass("menu-off")
+                $(this).addClass("clicked")
+                $(".main-container").addClass("activated")
+                $(".side-bar-container").fadeIn("fast")
+                $(".poem-container").fadeIn("fast")
+                $("span.genre-name").text(genreName)
+            })
+
+            $(".play-pause").on("click",function(){
+                $(this).toggleClass("play")
+            })
+
+             $(".playlist-button").on("click",function(){
+                $(this).toggleClass("activated")
+            })
+
+        });
+     </script>
+
+    </head>
+    <body id="main">
+    <div class="nav-top-container">
+        <div class="nav-top">
+            <div class="left search-container">
+                <input class="search" type="text" placeholder="Search">
+                <div class="search-button">
+                </div>
+            </div>
+        </div>
+        <div class="right logo">STANZA</div>
+    </div>
+    <div class="main-container">
+        <div class="menu">
+            <div class="genre-title">
+                    <h3>GENRES AND MOODS</h3>
+            </div>
+            <div class="genre-list-container">
+                <li class="genre-list-item">
+                    <h2>ANGER</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>ANTICIPATION</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>DISGUST</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>FEAR</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>JOY</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>NEGATIVE</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>POSITIVE</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>SADNESS</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>SURPRISE</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>TRUST</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>ANGER</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>ANTICIPATION</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>DISGUST</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>FEAR</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>JOY</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>NEGATIVE</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>POSITIVE</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>SADNESS</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>SURPRISE</h2>
+                </li>
+                <li class="genre-list-item">
+                    <h2>TRUST</h2>
+                </li>
+                </div>
+            </div>
+
+
+            <div class="side-bar-container">
+                <div class="side-bar">
+                    <div class="chosen-genre">
+                        <span class="genre-name"></span>
+                    </div> 
+                </div>
+
+                <div class="audio-track">
+                    <div class="audio-position">
+                    </div>
+                </div>
+
+                <div class="playback-controls">
+                    <div class="playback">
+                        <div class="skip-back button">
+                        </div>
+                        <div class="play-pause button">
+                        </div>
+                        <div class="skip-forward button">
+                        </div>
+                    </div>
+
+                    <div class="playlist">
+                        <div class="playlist-button button">
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="poem-information">
+                    <div class="poem-title">
+                        <h1>The Tide Rises, the Tide Falls</h1>
+                    </div>
+                    <div class="poem-author">
+                        <span class="author-name">WRITTEN BY HENRY WADSWORTH LONGFELLOW</span>
+                    </div>
+                 </div>
+
+
+                </div>
+
+                <div class="poem-container">
+                    <div class="poem">
+                        <p>
+                            The tide rises, the tide falls,<br />
+                            The twilight darkens, the curlew calls;<br />
+                            Along the sea-sands damp and brown<br />
+                            The traveller hastens toward the town,<br />
+                            And the tide rises, the tide falls.<br />
+                            Darkness settles on roofs and walls,<br />
+                            But the sea, the sea in the darkness calls;<br />
+                            The little waves, with their soft, white hands,<br />
+                            Efface the footprints in the sands,<br />
+                            And the tide rises, the tide falls.<br />
+                            The morning breaks; the steeds in their stalls<br />
+                            Stamp and neigh, as the hostler calls;<br />
+                            The day returns, but nevermore<br />
+                            Returns the traveller to the shore,<br />
+                            And the tide rises, the tide falls.<br />
+                            The tide rises, the tide falls,<br />
+                            The twilight darkens, the curlew calls;<br />
+                            Along the sea-sands damp and brown<br />
+                            The traveller hastens toward the town,<br />
+                            And the tide rises, the tide falls.<br />
+                            Darkness settles on roofs and walls,<br />
+                            But the sea, the sea in the darkness calls;<br />
+                            The little waves, with their soft, white hands,<br />
+                            Efface the footprints in the sands,<br />
+                            And the tide rises, the tide falls.<br />
+                            The morning breaks; the steeds in their stalls<br />
+                            Stamp and neigh, as the hostler calls;<br />
+                            The day returns, but nevermore<br />
+                            Returns the traveller to the shore,<br />
+                            And the tide rises, the tide falls.<br />
+                            The tide rises, the tide falls,<br />
+                            The twilight darkens, the curlew calls;<br />
+                            Along the sea-sands damp and brown<br />
+                            The traveller hastens toward the town,<br />
+                            And the tide rises, the tide falls.<br />
+                            Darkness settles on roofs and walls,<br />
+                            But the sea, the sea in the darkness calls;<br />
+                            The little waves, with their soft, white hands,<br />
+                            Efface the footprints in the sands,<br />
+                            And the tide rises, the tide falls.<br />
+                            The morning breaks; the steeds in their stalls<br />
+                            Stamp and neigh, as the hostler calls;<br />
+                            The day returns, but nevermore<br />
+                            Returns the traveller to the shore,<br />
+                            And the tide rises, the tide falls.<br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
