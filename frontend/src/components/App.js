@@ -14,14 +14,16 @@ var menu = document.getElementById('menu');
 var App = React.createClass({
 	getInitialState: function(){
 		return {
+			showMenu: this.props.emotion ? false : true,
 			emotion: this.props.emotion,
-			showMenu: this.props.showMenu,
 			current: 0,
 			playlist: null
 		};
 	},
 	componentDidMount: function(){
-		this.updatePlaylist();
+		if(this.state.emotion){
+			this.updatePlaylist();
+		}
 	},
 	updatePlaylist: function(){
 		fetch(routes.playlist + this.state.emotion)
@@ -56,11 +58,9 @@ var App = React.createClass({
 		this.setState({ showMenu: true });
 	},
 	renderPlaylist: function(){
-		var menu = (<Menu chooseEmotion={this.chooseEmotion} emotions={this.props.emotions} />);
 		var poem = this.getCurrent();
 		return (
 			<div className="inner">
-				{this.state.showMenu ? menu : null}
 				<Sidebar showMenu={this.showMenu} emotion={this.state.emotion} current={this.state.current} playlist={this.state.playlist} poem={poem} next={this.next} prev={this.prev} />
 				<Body text={poem.body} />	
 			</div>	
@@ -68,8 +68,11 @@ var App = React.createClass({
 	},
 	render: function(){
 		return (
-				<main className={this.state.playlist ? 'active' : ''}>{this.state.playlist ? this.renderPlaylist() : null}</main>
-			);
+			<main className={this.state.emotion ? 'active' : ''}>
+				<Menu visible={this.state.showMenu} chooseEmotion={this.chooseEmotion} emotions={this.props.emotions} />
+				{this.state.playlist ? this.renderPlaylist() : null}
+			</main>
+		);
 	}
 });
 

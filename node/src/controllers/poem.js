@@ -18,12 +18,6 @@
           res.send(poems);
         });
     },
-    playlist: function(req, res){
-      var emotion = req.params.emotion;
-      return Emotion.getList().then(function(emotionObj){
-        return res.render('playlist', { title: 'Stanza', emotion: emotion, emotions: emotionObj[0].emotions});
-      });
-    },
     home: function(req, res) {
       console.log('getEmotionList called');
       return Emotion.getList().then(function(emotionObj){

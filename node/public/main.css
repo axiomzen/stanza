@@ -268,19 +268,6 @@ h1 {
           color:#fff;
 }
 
-/*h2 {
-	font-family: "Playfair Display",serif;
-	font-size:1.75em;
-	font-weight: 400;
-	line-height:1.8;
-	color:#fff;
-	text-transform: uppercase;
-	letter-spacing: 0.3px;
-	-webkit-font-smoothing:antialiased;
-          text-rendering: optimizeLegibility;
-
-}*/
-
 h3 {
 	font-family: "Open Sans",sans-serif;
 	font-size:0.75em;
@@ -364,6 +351,19 @@ body {
 	position: fixed;
 	width: 100%;
 	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: opacity 0.2s ease-in-out;
+   	-moz-transition: 	opacity 0.2s ease-in-out;
+	-ms-transition: 	opacity 0.2s ease-in-out;
+     -o-transition: 	opacity 0.2s ease-in-out;
+        transition: 	opacity 0.2s ease-in-out;
+}
+
+#menu.active {
+	visibility: visible;
+	opacity: 1;
 }
 
 input[type="text"] {

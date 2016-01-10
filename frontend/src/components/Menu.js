@@ -16,7 +16,7 @@ var Menu = React.createClass({
 		}.bind(this));
 
 		return (
-			<div id='menu'>
+			<div id='menu' className={this.props.visible ? 'active' : ''}>
 				<div className='genre-title'>
 					<h3>GENRES AND MOODS</h3>
 				</div>

@@ -21,7 +21,7 @@
   poemSchema.index({ 'emotion.name' : 1});
 
   poemSchema.statics.getByEmotion = function(emotionName) {
-    return Poem.findAsync() //{ 'emotion.name' : emotionName }
+    return Poem.findAsync({ 'emotion.name' : emotionName })
       .then(function(poems) {
         // console.log('POEM ID: ', poems[0]._id);
         // console.log(poems[0]);

@@ -11,7 +11,6 @@
       });
     });
 
-    app.get('/playlist/:emotion', Poem.playlist);
     app.get('/poems/:emotion', Poem.get);
     app.get('/', Poem.home);
 

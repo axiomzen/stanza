@@ -1,1 +1,5 @@
 extends ./layout.jade
+
+block content
+	#wrapper(data-emotion!= emotion data-emotions=JSON.stringify(emotions))
+	script(src='/static/index.js')
