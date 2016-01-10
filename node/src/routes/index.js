@@ -11,7 +11,8 @@
       });
     });
 
-    app.get('/poems/:emotion', Poem.get);
+    app.get('/poems/:emotion', Poem.getByEmotion);
+    app.get('/poems', Poem.getByQuery);
     app.get('/emotions', Poem.getEmotionList);
 
     app.get('/', function (req, res) {

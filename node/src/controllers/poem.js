@@ -10,7 +10,8 @@
 
 
   var PoemCtrl = {
-    get: function(req, res) {
+
+    getByEmotion: function(req, res) {
       var emotion = req.params.emotion;
 
       return Poem.getByEmotion(emotion)
@@ -36,6 +37,16 @@
           });
         });
     },
+
+    getByQuery: function(req, res) {
+      var query = req.query.q;
+
+      return Poem.getByTitleOrPoet(query)
+        .then(function(poems) {
+          res.send(poems);
+        });
+    },
+
   };
 
   module.exports = PoemCtrl;
