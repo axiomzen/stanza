@@ -11,22 +11,23 @@
     'rm -rf built/'
   ]));
 
-  // gulp.task('jshint', function() {
-  //   gulp.src([
-  //     '{,*/}*.js',
-  //     'src/{,*/}*.js',
-  //     'js/{,*/}*.js',
-  //     '!js/libs/{,*/}*.js',
-  //     '!FeedMe/{,*/}*.js'
-  //   ])
-  //     .pipe(plugin.plumber(function(err) {
-  //       console.log('\x07');
-  //     }))
-  //     .pipe(plugin.jshint())
-  //     .pipe(plugin.jshint.reporter(plugin.stylish))
-  //     // No JS shall pass (if it is broken)!
-  //     .pipe(plugin.jshint.reporter('fail'));
-  // });
+  gulp.task('jshint', function() {
+    gulp.src([
+      '{,*/}*.js',
+      'src/{,*/}*.js',
+      'js/{,*/}*.js',
+      '!js/libs/{,*/}*.js',
+      '!public/{,*/}*.js',
+      '!FeedMe/{,*/}*.js'
+    ])
+      .pipe(plugin.plumber(function(err) {
+        console.log('\x07');
+      }))
+      .pipe(plugin.jshint())
+      .pipe(plugin.jshint.reporter(plugin.stylish))
+      // No JS shall pass (if it is broken)!
+      .pipe(plugin.jshint.reporter('fail'));
+  });
 
   /*
   **
