@@ -14,6 +14,10 @@
     app.get('/poems/:emotion', Poem.get);
     app.get('/emotions', Poem.getEmotionList);
 
+    app.get('/', function (req, res) {
+      res.render('index', { title: 'Stanza' });
+    });
+
   };
 
   module.exports = Router;

@@ -33,7 +33,7 @@
 
   // For the Merchant Queue page
   app.engine('html', require('ejs').renderFile);
-  app.set('view engine', 'html');
+  app.set('view engine', 'jade');
 
   // For static CSS / JS assets
   app.use('/static', express.static('public'));

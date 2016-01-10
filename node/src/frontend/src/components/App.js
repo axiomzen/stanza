@@ -5,7 +5,7 @@ var Sidebar = require('./Sidebar');
 var Body = require('./Body');
 
 var routes = {
-	playlist: 'http://localhost:3000/poems'
+	playlist: 'http://localhost:3000/poems/'
 };
 
 var App = React.createClass({
@@ -16,7 +16,7 @@ var App = React.createClass({
 		};
 	},
 	componentDidMount: function(){
-		fetch(routes.playlist)
+		fetch(routes.playlist + 'anger')
 	    .then(function(res) {
 	        return res.json();
 	    }).then(this.setPlaylist);
