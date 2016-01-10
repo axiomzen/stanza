@@ -21,122 +21,6 @@ time, mark, audio, video {
 	list-style: none;
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-
-#wrapper {
-	height: 100%;
-}
-
-main {
-	display: flex;
-	flex-direction: row;
-
-	width: 100%;
-	height: 100%;
-
-	background-color:#202020;
-
-	-webkit-transition: background 0.2s ease-out;
-	   -moz-transition: background 0.2s ease-out;
-	    -ms-transition: background 0.2s ease-out;
-	     -o-transition: background 0.2s ease-out;
-	        transition: background 0.2s ease-out;
-}
-
-main.active {
-	background: #5f2c82; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #516395, #614385); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-}
-
-.sidebar {
-	flex: 5;
-	background-color:rgba(0,0,0,0.1);
-	padding-top: 90px;
-	position: relative;
-}
-
-.sidebar .inner {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-
-.sidebar .meta {
-	box-sizing: border-box;
-	padding-left: 4em;
-	padding-right: 4em;
-}
-
-
-.audio-player .controls {
-	padding: 4em;
-}
-
-.body {
-	flex: 6;
-	overflow-y: scroll;
-	padding-top: 5em;
-	padding-right: 5em;
-	padding-left: 4em;
-}
-
-.body p {
-	white-space: pre;
-}
-
-header {
-	padding: 0 2em;
-	position: absolute;
-	width: 100%;
-	height: 5em;
-	text-align: middle;
-	box-sizing: border-box;
-}
-
-h2.poem-title {
-	font-family: "Open Sans", sans-serif;
-    font-size: 3em;
-    font-weight: 300;
-    line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    color: #fff;
-}
-
-h4.poem-credit {
-	border-bottom: solid 1px #fff;
-    font-family: "Open Sans",sans-serif;
-    font-size: 0.75em;
-    font-weight: 600;
-    line-height: 1em;
-    margin-top: 2em;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 2px;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    padding-bottom: 0.5em;
-    display: inline-block;
-}
-
-.logo {
-	float: right;
-	height: 5em;
-	line-height: 5em;
-
-	font-family: "Open Sans", sans-serif;
-	font-size: 1.2em;
-	font-weight: 600;
-	text-transform: uppercase;
-	color: #fff;
-	letter-spacing: 5.14px;
-}
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block; 
@@ -178,7 +62,7 @@ a:focus {
 	outline: none; 
 }
 
-h1 {
+h1{
 	font-family: "Open Sans",sans-serif;
 	font-size:3em;
 	font-weight: 300;
@@ -188,7 +72,7 @@ h1 {
           color:#fff;
 }
 
-/*h2 {
+h2{
 	font-family: "Playfair Display",serif;
 	font-size:1.75em;
 	font-weight: 400;
@@ -199,9 +83,9 @@ h1 {
 	-webkit-font-smoothing:antialiased;
           text-rendering: optimizeLegibility;
 
-}*/
+}
 
-h3 {
+h3{
 	font-family: "Open Sans",sans-serif;
 	font-size:0.75em;
 	font-weight: 600;
@@ -226,7 +110,7 @@ span.genre-name{
 
 }
 
-p {
+p{
 	font-family: "Playfair Display",serif;
 	font-size:1em;
 	font-weight: 400;
@@ -237,17 +121,27 @@ p {
           color:#fff;
 }
 
-body {
+body{
 	width:100%;
 	overflow:hidden;
 	-webkit-font-smoothing:antialiased;
           text-rendering: optimizeLegibility;
 }
 
-.left {
+.logo{
+	font-family: "Open Sans",sans-serif;
+	font-size:1.2em;
+	font-weight: 600;
+	line-height:1.3;
+	color:#fff;
+	letter-spacing: 5.14px;
+	padding-right:2em;
+}
+
+.left{
 	float:left;
 }
-.right {
+.right{
 	float:right;
 }
 
@@ -277,7 +171,9 @@ body {
 	background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
 
-.menu {
+
+
+.menu{
 	margin:2em 4em;
 	height:calc(100% - 64px);
 }
@@ -422,23 +318,21 @@ span.genre-name:after{
 	margin-left:-0.4em;
 }
 
-.progress-bar {
+.audio-track{
 	position:absolute;
 	bottom:0;
 	height:0.5em;
 	width:100%;
 	background-color:rgba(0,0,0,0.4);
 }
-
-.progress-bar .marker {
+.audio-position{
 	position:absolute;
-	bottom: 0;
-	height: 0.5em;
-	width: 0;
+	bottom:0;
+	height:0.5em;
+	width:30%;
 	background-color:rgba(255,255,255,1);
 }
-
-.progress-bar .marker:after{
+.audio-position:after{
 	position:absolute;
 	right:0;
 	bottom:0;

@@ -8,14 +8,18 @@ var AudioPlayer = React.createClass({
 	},
 	componentDidMount: function(){
 		this.refs.player.play();
+    	this.interval = setInterval(this.tick, 250);
 	},
 	componentDidUpdate: function(prevProps, prevState){
 		if(prevProps.poem._id !== this.props.poem._id){
 			this.refs.player.load();
 			this.refs.player.play();
-			this.setState({ playing: true });			
+			this.setState({ playing: true, progress: 0 });			
 		}
 	},
+	tick: function() {
+    	this.setState({ progress: this.refs.player.currentTime / this.refs.player.duration });
+  	},
 	toggle: function(){
 		if (this.state.playing){
 			this.refs.player.pause();
@@ -37,9 +41,14 @@ var AudioPlayer = React.createClass({
 				<audio ref='player'>
 					  <source src={this.props.poem.audio} type="audio/mpeg" />
 				</audio>
-				<button onClick={this.prev}>prev</button>
-				<button onClick={this.toggle}>{this.state.playing ? 'pause' : 'play'}</button>
-				<button onClick={this.next}>next</button>
+				<div className="controls">
+					<div className="skip-back button" onClick={this.prev}></div>
+					<div className={'play-pause button' + (!this.state.playing ? ' play' : '')}  onClick={this.toggle}></div>
+					<div className="skip-forward button" onClick={this.next}></div>
+				</div>
+				<div className="progress-bar">
+                    <div className="marker" style={{ width: this.state.progress * 100 + '%'}}></div>
+                </div>
 			</div>
 			);
 	}

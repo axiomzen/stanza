@@ -37,7 +37,7 @@ var App = React.createClass({
 		if(this.state.playlist){
 			var poem = this.getCurrent();
 			return (
-				<main>
+				<main className="active">
 					<Sidebar poem={poem} next={this.next} prev={this.prev} />
 					<Body text={poem.body} />
 				</main>
