@@ -1,8 +1,11 @@
 var keyMirror = require('keymirror');
 
+var config = require('../config/production');
+//var config = require('../config/local');
+
 module.exports = {
   apiRoutes: {
-    PLAYLIST: 'http://codex-stanza.herokuapp.com/poems/'
+    PLAYLIST: config.API_URL + 'poems/'
   },
   actionTypes: keyMirror({
     PLAYLIST_LOAD: null,
