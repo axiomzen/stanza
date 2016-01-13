@@ -12,13 +12,20 @@ var StanzaActions = {
 
   nextPoem: function(){
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.actionTypes.PLAYLIST_NEXT
+      actionType: StanzaConstants.actionTypes.PLAYLIST_NEXT_POEM
     });
   },
 
   previousPoem: function(){
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.actionTypes.PLAYLIST_PREVIOUS
+      actionType: StanzaConstants.actionTypes.PLAYLIST_PREVIOUS_POEM
+    });
+  },
+
+  selectPoem: function(poemIndex){
+    AppDispatcher.dispatch({
+      actionType: StanzaConstants.actionTypes.PLAYLIST_SELECT_POEM,
+      poemIndex: poemIndex
     });
   },
 

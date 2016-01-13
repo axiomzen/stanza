@@ -44,6 +44,10 @@ function previousPoem(){
   _currentIndex -= 1;
 }
 
+function selectPoem(poemIndex){
+  _currentIndex = poemIndex;
+}
+
 var StanzaStore = assign({}, EventEmitter.prototype, {
 
   getEmotion: function() {
@@ -91,12 +95,16 @@ AppDispatcher.register(function(action) {
         StanzaStore.emitChange();
       });
       break;
-    case StanzaConstants.actionTypes.PLAYLIST_NEXT:
+    case StanzaConstants.actionTypes.PLAYLIST_NEXT_POEM:
       nextPoem();
       StanzaStore.emitChange();
       break;
-    case StanzaConstants.actionTypes.PLAYLIST_PREVIOUS:
+    case StanzaConstants.actionTypes.PLAYLIST_PREVIOUS_POEM:
       previousPoem();
+      StanzaStore.emitChange();
+      break;
+    case StanzaConstants.actionTypes.PLAYLIST_SELECT_POEM:
+      selectPoem(action.poemIndex);
       StanzaStore.emitChange();
       break;
     case StanzaConstants.actionTypes.EMOTION_UPDATE:

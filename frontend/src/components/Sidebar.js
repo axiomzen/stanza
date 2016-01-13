@@ -12,9 +12,13 @@ var Sidebar = React.createClass({
   togglePlaylist: function(){
     this.setState({ showPlaylist: !this.state.showPlaylist });
   },
+  selectPoem: function(poemIndex){
+    StanzaActions.selectPoem(poemIndex);
+    this.togglePlaylist();
+  },
   renderPlaylist: function(){
     var poems = this.props.playlist.map(function(poem, i){
-      return (<li className={this.props.currentIndex == i ? 'active' : ''} key={i}><strong>{poem.title}</strong> {poem.poet}</li>);
+      return (<li className={this.props.currentIndex == i ? 'active' : ''} key={i} onClick={this.selectPoem.bind(this, i)}><strong>{poem.title}</strong> {poem.poet}</li>);
     }.bind(this));
     return (<div className={"playlist" + (this.state.showPlaylist ? ' active' : '')}><ul>{poems}</ul></div>);
   },
@@ -36,7 +40,7 @@ var Sidebar = React.createClass({
           <AudioPlayer showPlaylist={this.state.showPlaylist} togglePlaylist={this.togglePlaylist} playlist={this.props.playlist} currentIndex={this.props.currentIndex} poem={this.props.poem} />
         </div>
       </div>
-      );
+    );
   }
 });
 

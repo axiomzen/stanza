@@ -9,8 +9,9 @@ module.exports = {
   },
   actionTypes: keyMirror({
     PLAYLIST_LOAD: null,
-    PLAYLIST_NEXT: null,
-    PLAYLIST_PREVIOUS: null,
+    PLAYLIST_NEXT_POEM: null,
+    PLAYLIST_PREVIOUS_POEM: null,
+    PLAYLIST_SELECT_POEM: null,
     EMOTION_UPDATE: null,
     MENU_TOGGLE: null
   })
