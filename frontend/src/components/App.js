@@ -8,28 +8,28 @@ var Body = require('./Body');
 var Menu = require('./Menu');
 
 var App = React.createClass({
-  getInitialState: function(){
+  getInitialState: function() {
     return {
       menuActive: StanzaStore.isMenuActive(),
       emotion: StanzaStore.getEmotion()
     };
   },
-  componentWillMount: function(){
+  componentWillMount: function() {
     StanzaStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
     StanzaStore.removeChangeListener(this._onChange);
   },
-  render: function(){
-    return (
-      <main className={this.state.emotion ? this.state.emotion.replace('+', '-') : null}>
-        <Menu visible={this.state.menuActive} />
-        {this.props.children}
+  render: function() {
+    return ( 
+      <main className={ this.state.emotion ? this.state.emotion.replace('+', '-') : null }>
+        <Menu visible={ this.state.menuActive } />
+        { this.props.children }
       </main>
     );
   },
   _onChange: function() {
-    this.setState({ 
+    this.setState({
       menuActive: StanzaStore.isMenuActive(),
       emotion: StanzaStore.getEmotion()
     });
