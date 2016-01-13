@@ -6,7 +6,7 @@ var AudioPlayer = React.createClass({
   getInitialState: function(){
     return {
       playing: true,
-    }
+    };
   },
   componentDidMount: function(){
     this.refs.player.play();
@@ -23,8 +23,8 @@ var AudioPlayer = React.createClass({
     if (this.refs.player.ended){
       this.next();
     }
-      this.setState({ progress: this.refs.player.currentTime / this.refs.player.duration });
-    },
+    this.setState({ progress: this.refs.player.currentTime / this.refs.player.duration });
+  },
   toggle: function(){
     if (this.state.playing){
       this.refs.player.pause();
