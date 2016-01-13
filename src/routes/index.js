@@ -11,12 +11,11 @@
       });
     });
 
-
     app.get('/poems/:emotion', Poem.getByEmotion);
     app.get('/poems', Poem.getByQuery);
     app.get('/emotions', Poem.getEmotionList);
-    app.get('/', Poem.home);
-
+    
+    app.get('*', Poem.home);
   };
 
   module.exports = Router;

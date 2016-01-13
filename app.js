@@ -29,14 +29,13 @@
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser());
 
-  require('./src/routes')(app);
-
   // For the Merchant Queue page
   app.engine('html', require('ejs').renderFile);
   app.set('view engine', 'jade');
 
-  // For static CSS / JS assets
-  app.use('/static', express.static('public'));
+  app.use('/static', express.static(__dirname + '/public'));
+
+  require('./src/routes')(app);
 
   /// Error handlers
   app.use(function (err, req, res, next) {
