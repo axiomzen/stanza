@@ -83,28 +83,27 @@ var StanzaStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-// Register callback to handle all updates
 AppDispatcher.register(function(action) {
   switch(action.actionType) {
-    case StanzaConstants.PLAYLIST_LOAD:
+    case StanzaConstants.actionTypes.PLAYLIST_LOAD:
       fetchPlaylist(action.emotion).then(function(playlist){
         setPlaylist(playlist);
         StanzaStore.emitChange();
       });
       break;
-    case StanzaConstants.PLAYLIST_NEXT:
+    case StanzaConstants.actionTypes.PLAYLIST_NEXT:
       nextPoem();
       StanzaStore.emitChange();
       break;
-    case StanzaConstants.PLAYLIST_PREVIOUS:
+    case StanzaConstants.actionTypes.PLAYLIST_PREVIOUS:
       previousPoem();
       StanzaStore.emitChange();
       break;
-    case StanzaConstants.EMOTION_UPDATE:
+    case StanzaConstants.actionTypes.EMOTION_UPDATE:
       setEmotion(action.emotion);
       StanzaStore.emitChange();
       break;
-    case StanzaConstants.MENU_TOGGLE:
+    case StanzaConstants.actionTypes.MENU_TOGGLE:
       setMenuActive(action.menuActive);
       StanzaStore.emitChange();
       break;
