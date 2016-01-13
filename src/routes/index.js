@@ -11,10 +11,10 @@
       });
     });
 
-    app.get('/poems/:emotion', Poem.getByEmotion);
-    app.get('/poems', Poem.getByQuery);
-    app.get('/emotions', Poem.getEmotionList);
-    
+    app.get('/api/poems/:emotion', Poem.getByEmotion);
+    app.get('/api/poems', Poem.getByQuery);
+    app.get('/api/emotions', Poem.getEmotionList);
+
     app.get('*', Poem.home);
   };
 
