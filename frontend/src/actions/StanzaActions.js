@@ -5,33 +5,33 @@ var StanzaActions = {
 
   loadPlaylist: function(emotion) {
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.PLAYLIST_LOAD,
+      actionType: StanzaConstants.actionTypes.PLAYLIST_LOAD,
       emotion: emotion
     });
   },
 
   nextPoem: function(){
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.PLAYLIST_NEXT
+      actionType: StanzaConstants.actionTypes.PLAYLIST_NEXT
     });
   },
 
   previousPoem: function(){
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.PLAYLIST_PREVIOUS
+      actionType: StanzaConstants.actionTypes.PLAYLIST_PREVIOUS
     });
   },
 
   updateEmotion: function(emotion) {
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.EMOTION_UPDATE,
+      actionType: StanzaConstants.actionTypes.EMOTION_UPDATE,
       emotion: emotion
     });
   },
 
   toggleMenu: function(menuActive) {
     AppDispatcher.dispatch({
-      actionType: StanzaConstants.MENU_TOGGLE,
+      actionType: StanzaConstants.actionTypes.MENU_TOGGLE,
       menuActive: menuActive
     });
   }

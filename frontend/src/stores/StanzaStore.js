@@ -6,17 +6,13 @@ var fetch = require('node-fetch');
 
 var CHANGE_EVENT = 'change';
 
-var API_ROUTES = {
-  playlist: 'http://localhost:3000/poems/'
-};
-
 var _playlist = [];
 var _currentIndex = 0;
 var _emotion = null;
 var _menuActive = false;
 
 function fetchPlaylist(emotion) {
-  return fetch(API_ROUTES.playlist + emotion)
+  return fetch(StanzaConstants.apiRoutes.PLAYLIST + emotion)
   .then(function(res) {
       return res.json();
   });
