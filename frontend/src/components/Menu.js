@@ -1,4 +1,5 @@
 var React = require('react');
+var Link = require('react-router').Link;
 
 var Menu = React.createClass({
 	chooseEmotion: function(emotion, event){
@@ -9,8 +10,8 @@ var Menu = React.createClass({
 
 		var emotions = this.props.emotions.map(function(emotion, i){
 			return (
-				<li className='genre-list-item'>
-					<h2><a href={'/playlist/' + emotion} onClick={this.chooseEmotion.bind(this, emotion)}>{emotion}</a></h2>
+				<li className='genre-list-item' key={i}>
+					<h2><Link to={'/playlist/' + emotion}>{emotion}</Link></h2>
 				</li>
 			);
 		}.bind(this));

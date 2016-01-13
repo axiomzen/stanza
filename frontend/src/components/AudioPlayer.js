@@ -1,5 +1,7 @@
 var React = require('react');
 
+var StanzaActions = require('../actions/StanzaActions');
+
 var AudioPlayer = React.createClass({	
 	getInitialState: function(){
 		return {
@@ -8,11 +10,10 @@ var AudioPlayer = React.createClass({
 	},
 	componentDidMount: function(){
 		this.refs.player.play();
-    	this.interval = setInterval(this.tick, 250);
+    this.interval = setInterval(this.tick, 250);
 	},
 	componentDidUpdate: function(prevProps, prevState){
 		if(prevProps.poem._id !== this.props.poem._id){
-			console.log('updated');
 			this.refs.player.load();
 			this.refs.player.play();
 			this.setState({ playing: true, progress: 0 });			
@@ -30,14 +31,13 @@ var AudioPlayer = React.createClass({
 		} else {
 			this.refs.player.play();
 		}
-		
 		this.setState({ playing: !this.state.playing});
 	},
 	next: function(){
-		return this.props.next();
+		StanzaActions.nextPoem();
 	},
 	prev: function(){
-		return this.props.prev();
+		StanzaActions.previousPoem();
 	},
 	togglePlaylist: function(){
 		return this.props.togglePlaylist();
@@ -49,14 +49,14 @@ var AudioPlayer = React.createClass({
 					  <source src={this.props.poem.audio} type="audio/mpeg" />
 				</audio>
 				<div className="controls">
-					<div className={"skip-back button" + (this.props.current == 0 ? ' inactive' : '')} onClick={this.prev}></div>
+					<div className={"skip-back button" + (this.props.currentIndex == 0 ? ' inactive' : '')} onClick={this.prev}></div>
 					<div className={'play-pause button' + (!this.state.playing ? ' play' : '')}  onClick={this.toggle}></div>
-					<div className={"skip-forward button" + (this.props.current == this.props.playlist.length - 1 ? ' inactive' : '')} onClick={this.next}></div>
+					<div className={"skip-forward button" + (this.props.currentIndex == this.props.playlist.length - 1 ? ' inactive' : '')} onClick={this.next}></div>
 					<div className={"playlist-button button " + (this.props.showPlaylist ? ' active' : '')} onClick={this.togglePlaylist}></div>
 				</div>
 				<div className="progress-bar">
-                    <div className="marker" style={{ width: this.state.progress * 100 + '%'}}></div>
-                </div>
+        	<div className="marker" style={{ width: this.state.progress * 100 + '%'}}></div>
+        </div>
 			</div>
 			);
 	}
