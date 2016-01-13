@@ -31,7 +31,7 @@ var Playlist = React.createClass({
   	var poem = StanzaStore.getCurrentPoem();
 		return (
 			<div className="inner">
-        <Sidebar emotion={this.props.params.emotion} currentIndex={this.state.currentIndex} playlist={this.state.playlist} poem={poem} />
+        <Sidebar poem={poem} emotion={this.props.params.emotion} currentIndex={this.state.currentIndex} playlist={this.state.playlist} />
         <Body text={poem.body} />
       </div>
 		);
