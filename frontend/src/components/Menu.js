@@ -1,14 +1,11 @@
 var React = require('react');
 var Link = require('react-router').Link;
 
-var Menu = React.createClass({
-	chooseEmotion: function(emotion, event){
-		event.preventDefault();
-		this.props.chooseEmotion(emotion.toLowerCase());
-	},
-	render: function(){
+var EMOTIONS = JSON.parse(document.getElementById('wrapper').dataset.emotions);
 
-		var emotions = this.props.emotions.map(function(emotion, i){
+var Menu = React.createClass({
+	render: function(){
+		var emotions = EMOTIONS.map(function(emotion, i){
 			return (
 				<li className='genre-list-item' key={i}>
 					<h2><Link to={'/playlist/' + emotion}>{emotion}</Link></h2>

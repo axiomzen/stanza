@@ -7,8 +7,6 @@ var Sidebar = require('./Sidebar');
 var Body = require('./Body');
 var Menu = require('./Menu');
 
-var emotions = JSON.parse(document.getElementById('wrapper').dataset.emotions);
-
 var App = React.createClass({
   getInitialState: function(){
     return {
@@ -25,7 +23,7 @@ var App = React.createClass({
   render: function(){
     return (
       <main className={this.state.emotion ? this.state.emotion.replace('+', '-') : null}>
-        <Menu visible={this.state.menuActive} emotions={emotions} />
+        <Menu visible={this.state.menuActive} />
         {this.props.children}
       </main>
     );
