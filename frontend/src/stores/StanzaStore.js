@@ -44,7 +44,7 @@ function previousPoem(){
   _currentIndex -= 1;
 }
 
-function selectPoem(poemIndex){
+function setIndex(poemIndex){
   _currentIndex = poemIndex;
 }
 
@@ -92,6 +92,7 @@ AppDispatcher.register(function(action) {
     case StanzaConstants.actionTypes.PLAYLIST_LOAD:
       fetchPlaylist(action.emotion).then(function(playlist){
         setPlaylist(playlist);
+        setIndex(0);
         StanzaStore.emitChange();
       });
       break;
@@ -104,7 +105,7 @@ AppDispatcher.register(function(action) {
       StanzaStore.emitChange();
       break;
     case StanzaConstants.actionTypes.PLAYLIST_SELECT_POEM:
-      selectPoem(action.poemIndex);
+      setIndex(action.poemIndex);
       StanzaStore.emitChange();
       break;
     case StanzaConstants.actionTypes.EMOTION_UPDATE:
